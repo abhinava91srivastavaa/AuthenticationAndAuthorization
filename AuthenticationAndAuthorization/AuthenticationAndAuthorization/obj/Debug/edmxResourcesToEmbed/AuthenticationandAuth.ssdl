@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AuthandAuthorizationModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="UserprofileandReg">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="LastName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="EmailId" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="PhoneNo" Type="varchar" MaxLength="11" />
+    <Property Name="CommunicationAddress" Type="varchar(max)" />
+    <Property Name="Status" Type="varchar" MaxLength="10" />
+    <Property Name="UserType" Type="int" />
+  </EntityType>
+  <Function Name="CheckEmailID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserEmail" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserType" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="AuthandAuthorizationModelStoreContainer">
+    <EntitySet Name="UserprofileandReg" EntityType="Self.UserprofileandReg" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

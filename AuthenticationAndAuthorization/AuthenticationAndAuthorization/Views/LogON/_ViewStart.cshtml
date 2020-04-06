@@ -1,0 +1,26 @@
+﻿@{
+    /**/
+    var a = Convert.ToInt32(Session["UserType"]);
+    //var controller = HttpContext.Current.Request.RequestContext.RouteData.Values["Controller"].ToString();
+    //var controller = Session["UserType"].ToString();
+    string cLayout = "";
+    if (a == 1)
+    {
+        cLayout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    }
+    else if (a == 2)
+    {
+        cLayout = "~/Views/Shared/_LayoutSupervisor.cshtml";
+    }
+    else if (a == 3)
+    {
+        cLayout = "~/Views/Shared/_LayoutAgent.cshtml";
+    }
+    else
+    {
+        cLayout = "~/Views/Shared/_Layout.cshtml";
+    }
+    Layout = cLayout;
+    // Layout = "~/Views/Shared/_LayoutLogON.cshtml";
+}
+
